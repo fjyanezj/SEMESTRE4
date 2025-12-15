@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 3 | Estructura Semántica y Contenido</title>
+    <!-- Carga de Tailwind CSS para estilos modernos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configuración global de fuente y colores base */
+        :root {
+            --color-primary: #3B82F6; /* blue-500 */
+            --color-accent: #10B981; /* emerald-500 */
+            --color-text: #1F2937; /* gray-800 */
+            --color-bg: #F9FAFB; /* gray-50 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        /* Estilos personalizados para encabezados, cumpliendo el requisito de CSS */
+        h1, h2, h3 {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.5rem; } /* text-4xl */
+        h2 { font-size: 2rem; } /* text-3xl */
+        h3 { color: var(--color-accent); font-size: 1.5rem; } /* text-xl */
+
+        /* Estilos para la tabla (cumpliendo el requisito de bordes/estilos) */
+        .styled-table th, .styled-table td {
+            border-bottom: 1px solid #E5E7EB; /* gray-200 */
+            padding: 12px;
+            text-align: left;
+        }
+
+        .styled-table th {
+            background-color: #DBEAFE; /* blue-100 */
+            color: var(--color-text);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ETIQUETA SEMÁNTICA: HEADER -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+            <!-- H1: Primer nivel de encabezado obligatorio -->
+            <h1 class="text-3xl font-extrabold text-gray-900">
+                Proyecto de Estructura Web Semántica
+            </h1>
+            
+            <!-- ETIQUETA SEMÁNTICA: NAV -->
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#inicio" class="text-gray-600 hover:text-blue-500 transition duration-300">Inicio</a></li>
+                    <li><a href="#detalles" class="text-gray-600 hover:text-blue-500 transition duration-300">Detalles</a></li>
+                    <li><a href="#contacto" class="text-gray-600 hover:text-blue-500 transition duration-300">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. ETIQUETA SEMÁNTICA: MAIN -->
+    <main class="max-w-7xl mx-auto mt-8 p-4 space-y-12">
+
+        <!-- 3. ETIQUETA SEMÁNTICA: SECTION (Introducción) -->
+        <section id="inicio" class="p-6 bg-white rounded-xl shadow-lg">
+            <!-- H2: Segundo nivel de encabezado obligatorio -->
+            <h2 class="mb-4 pb-2 border-b-2 border-blue-200">
+                Acerca de la Estructura y la Organización
+            </h2>
+
+            <!-- Párrafo con formato (strong y em) -->
+            <p class="text-gray-700 mb-4">
+                Este proyecto demuestra la <strong class="font-bold text-blue-600">organización profesional de contenido</strong> utilizando HTML5.
+                Es crucial entender cómo las etiquetas semánticas mejoran la accesibilidad y el SEO.
+                Por lo tanto, <em class="italic text-green-600">cada elemento ha sido cuidadosamente seleccionado</em> para cumplir con los requisitos del estándar.
+            </p>
+            
+            <!-- UL: Lista desordenada obligatoria -->
+            <h3 class="mt-6 mb-2">Beneficios de las Etiquetas Semánticas:</h3>
+            <ul class="list-disc list-inside space-y-1 text-gray-600 ml-4">
+                <li>Mejoran la accesibilidad para lectores de pantalla.</li>
+                <li>Facilitan la indexación por parte de los motores de búsqueda.</li>
+                <li>Hacen el código más legible y mantenible.</li>
+                <li>Definen claramente la estructura del documento.</li>
+            </ul>
+        </section>
+
+        <!-- 4. ETIQUETA SEMÁNTICA: ARTICLE (Contenido Específico) -->
+        <article class="p-6 bg-white rounded-xl shadow-lg" id="detalles">
+            <!-- H3: Tercer nivel de encabezado obligatorio -->
+            <h3 class="mb-4 pb-2 border-b-2 border-emerald-200">
+                Detalles de Implementación y Recursos
+            </h3>
+
+            <!-- 5. TABLA OBLIGATORIA (3 filas, 2 columnas) -->
+            <div class="overflow-x-auto mb-8">
+                <table class="styled-table w-full border border-gray-200 rounded-lg overflow-hidden">
+                    <!-- THEAD: Encabezado de la tabla obligatorio -->
+                    <thead>
+                        <tr>
+                            <th>Etiqueta HTML</th>
+                            <th>Función Principal</th>
+                        </tr>
+                    </thead>
+                    <!-- TBODY: Cuerpo de la tabla obligatorio -->
+                    <tbody>
+                        <tr>
+                            <!-- TH: Celda de encabezado en el cuerpo (opcional, pero útil) -->
+                            <th>&lt;main&gt;</th>
+                            <td>Contenido único y principal del documento.</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;section&gt;</th>
+                            <td>Agrupación temática de contenido relacionado.</td>
+                        </tr>
+                        <tr>
+                            <th>&lt;article&gt;</th>
+                            <td>Contenido independiente y autocontenido (e.g., una publicación de blog).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- OL: Lista ordenada obligatoria -->
+            <h3 class="mt-6 mb-2">Pasos para el Despliegue en GitHub Pages:</h3>
+            <ol class="list-decimal list-inside space-y-1 text-gray-600 ml-4">
+                <li>Inicializar el repositorio de Git en la carpeta 'Semana 3'.</li>
+                <li>Realizar el primer 'commit' con todo el contenido.</li>
+                <li>Subir los archivos a un repositorio público en GitHub.</li>
+                <li>Configurar GitHub Pages para desplegar desde la rama principal.</li>
+            </ol>
+
+            <!-- 6. ENLACE EXTERNO OBLIGATORIO -->
+            <p class="mt-6">
+                Para más información sobre las etiquetas semánticas, visita el siguiente
+                <a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" target="_blank" 
+                   class="text-blue-500 hover:text-blue-700 font-medium underline">
+                    recurso externo sobre semántica web
+                </a>.
+            </p>
+        </article>
+
+        <!-- 7. ETIQUETA SEMÁNTICA: SECTION (Multimedia) -->
+        <section class="p-6 bg-white rounded-xl shadow-lg">
+            <h2 class="mb-6 pb-2 border-b-2 border-blue-200">
+                Recursos Multimedia del Proyecto
+            </h2>
+
+            <!-- Imagen (con atributo alt obligatorio) -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="mb-3">Imagen de Referencia</h3>
+                    <!--
+                        !!! IMPORTANTE: REEMPLAZA esta URL con: assets/img/imagen1.jpg
+                    -->
+                    <img src="assets/img/imagen1.jpg" 
+                         alt="Ilustración de un código web bien estructurado"
+                         class="w-full h-auto rounded-lg shadow-md border-4 border-blue-200"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/FF0000/FFFFFF?text=ERROR+de+Carga';">
+                    <p class="text-sm text-gray-500 mt-2 italic">
+                        *Placeholder.
+                    </p>
+                </div>
+
+                <!-- Video (con atributo controls obligatorio) -->
+                <div>
+                    <h3 class="mb-3">Video Demostrativo</h3>
+                    <!--
+                        !!! IMPORTANTE: REEMPLAZA esta URL con una ruta relativa, ejemplo: assets/video/video1.mp4
+                        El video a continuación es un sample de Google para demostración.
+                    -->
+                    <video controls
+                           class="w-full h-auto rounded-lg shadow-md border-4 border-emerald-200">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                    <p class="text-sm text-gray-500 mt-2 italic">
+                        *Placeholder.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 8. FORMULARIO OBLIGATORIO -->
+        <section id="contacto" class="p-6 bg-white rounded-xl shadow-lg">
+            <h2 class="mb-6 pb-2 border-b-2 border-blue-200">
+                Formulario de Contacto
+            </h2>
+
+            <!-- Estilos aplicados al formulario y sus campos, cumpliendo el requisito -->
+            <form action="#" method="POST" class="space-y-4 p-6 border-2 border-emerald-300 rounded-lg bg-emerald-50">
+                <div class="flex flex-col">
+                    <label for="nombre" class="font-medium text-gray-700 mb-1">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required 
+                           class="p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <div class="flex flex-col">
+                    <label for="correo" class="font-medium text-gray-700 mb-1">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required
+                           class="p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <!-- Botón de envío obligatorio -->
+                <button type="submit" 
+                        class="w-full py-2 px-4 bg-emerald-500 text-white font-semibold rounded-md shadow-md 
+                               hover:bg-emerald-600 transition duration-300 transform hover:scale-[1.01]">
+                    Enviar Consulta
+                </button>
+            </form>
+        </section>
+        
+    </main>
+
+    <!-- 9. ETIQUETA SEMÁNTICA: FOOTER -->
+    <footer class="bg-gray-800 text-white mt-12 p-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2024 Semana 3 | Estructura Web Semántica. Todos los derechos reservados.</p>
+            <p class="text-sm text-gray-400">Desarrollado para fines académicos.</p>
+        </div>
+    </footer>
+
+</body>
+</html>  
